@@ -74,16 +74,17 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Mts-2w-9pc" id="xnV-I9-PNS"/>
+                        <segue destination="n9g-Ih-MJA" kind="presentation" identifier="goToPlayer" id="BNW-qD-LYV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bo0-Uq-tRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-320.80000000000001" y="89.505247376311857"/>
         </scene>
-        <!--View Controller-->
+        <!--Player View Controller-->
         <scene sceneID="Ptm-ua-8vJ">
             <objects>
-                <viewController id="n9g-Ih-MJA" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="n9g-Ih-MJA" customClass="PlayerViewController" customModule="Sound_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="goa-BN-bHE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,16 +92,24 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgz-pL-lYq">
                                 <rect key="frame" x="161" y="318" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Pause"/>
+                                <color key="backgroundColor" red="0.7274094391" green="0.12560380500000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseButton:" destination="n9g-Ih-MJA" eventType="touchUpInside" id="oQm-tO-Rk8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCE-2T-XK3">
                                 <rect key="frame" x="37" y="318" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.7274094391" green="0.12560380500000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playButton:" destination="n9g-Ih-MJA" eventType="touchUpInside" id="DR0-e3-Jhb"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4U-Mh-zzb">
                                 <rect key="frame" x="67" y="121" width="240" height="128"/>
@@ -109,17 +118,34 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfp-GQ-SID">
                                 <rect key="frame" x="274" y="318" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="replay"/>
+                                <color key="backgroundColor" red="0.72740943906425493" green="0.12560380502851809" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="replay">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="replayButton:" destination="n9g-Ih-MJA" eventType="touchUpInside" id="t7c-ER-4Zh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="bwL-CP-i8g"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0M7-ny-yLh" appends="YES" id="mbx-vu-yhr"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="playerImage" destination="f4U-Mh-zzb" id="izv-uk-F12"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coA-ZW-Iwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="0M7-ny-yLh">
+                    <connections>
+                        <action selector="dragGesture:" destination="n9g-Ih-MJA" id="Koe-Kn-qu8"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="461.60000000000002" y="80.50974512743629"/>
+            <point key="canvasLocation" x="431" y="90"/>
         </scene>
     </scenes>
 </document>

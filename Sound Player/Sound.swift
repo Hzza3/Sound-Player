@@ -13,10 +13,11 @@ class Sound
 {
     var image: UIImage
     var title: String
-    
-    init(image: UIImage, title: String) {
+    var soundFileName: String
+    init(image: UIImage, title: String, soundFileName: String) {
         self.image = image
         self.title = title
+        self.soundFileName = soundFileName
     }
     
     

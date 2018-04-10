@@ -12,7 +12,7 @@ class SoundListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var Sounds: [Sound] = []
-    
+    var fileIndex = -1
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -22,9 +22,9 @@ class SoundListViewController: UIViewController {
     
     func createArray() -> [Sound] {
         var tempSounds : [Sound] = []
-        let sound1 =  Sound(image: #imageLiteral(resourceName: "one"), title: "sound1")
-        let sound2 = Sound(image: #imageLiteral(resourceName: "two"), title: "sound2")
-        let sound3 = Sound(image: #imageLiteral(resourceName: "three"), title: "sound3")
+        let sound1 = Sound(image: #imageLiteral(resourceName: "one"), title: "Al-Ikhlas", soundFileName: "112 - Al-Ikhlas")
+        let sound2 = Sound(image: #imageLiteral(resourceName: "two"), title: "Al-Falaq", soundFileName: "113 - Al-Falaq")
+        let sound3 = Sound(image: #imageLiteral(resourceName: "three"), title: "An-Nas", soundFileName: "114 - An-Nas")
         
         tempSounds.append(sound1)
         tempSounds.append(sound2)
@@ -32,6 +32,16 @@ class SoundListViewController: UIViewController {
         
         return tempSounds
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToPlayer"
+        {
+          let destinationVC = segue.destination as! PlayerViewController
+            destinationVC.fileName = Sounds[fileIndex].soundFileName
+            destinationVC.soundImage = Sounds[fileIndex].image
+        }
+    }
+    
+
     
     
 }
@@ -45,9 +55,14 @@ extension SoundListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sound = Sounds[indexPath.row]
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "SoundCell") as! SoundCell
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: "soundCell") as! SoundCell
         cell.setSoundCell(sound: sound)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        fileIndex = indexPath.row
+        performSegue(withIdentifier: "goToPlayer", sender: self)
     }
 }
