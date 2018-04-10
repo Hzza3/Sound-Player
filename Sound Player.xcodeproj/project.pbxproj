@@ -15,9 +15,9 @@
 		3DC710EE207D15E0000FD245 /* SoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC710ED207D15E0000FD245 /* SoundCell.swift */; };
 		3DC710F0207D16C6000FD245 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC710EF207D16C6000FD245 /* Sound.swift */; };
 		3DC710F8207D33BF000FD245 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC710F7207D33BF000FD245 /* PlayerViewController.swift */; };
-		3DC710FB207D4230000FD245 /* 113 - Al-Falaq.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3DC710F9207D4230000FD245 /* 113 - Al-Falaq.mp3 */; };
-		3DC710FC207D4230000FD245 /* 112 - Al-Ikhlas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3DC710FA207D4230000FD245 /* 112 - Al-Ikhlas.mp3 */; };
-		3DC710FE207D424D000FD245 /* 114 - An-Nas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3DC710FD207D424D000FD245 /* 114 - An-Nas.mp3 */; };
+		3DC710FB207D4230000FD245 /* Al-Falaq.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3DC710F9207D4230000FD245 /* Al-Falaq.mp3 */; };
+		3DC710FC207D4230000FD245 /* Al-Ikhlas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3DC710FA207D4230000FD245 /* Al-Ikhlas.mp3 */; };
+		3DC710FE207D424D000FD245 /* An-Nas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3DC710FD207D424D000FD245 /* An-Nas.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +31,9 @@
 		3DC710ED207D15E0000FD245 /* SoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCell.swift; sourceTree = "<group>"; };
 		3DC710EF207D16C6000FD245 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		3DC710F7207D33BF000FD245 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		3DC710F9207D4230000FD245 /* 113 - Al-Falaq.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "113 - Al-Falaq.mp3"; sourceTree = "<group>"; };
-		3DC710FA207D4230000FD245 /* 112 - Al-Ikhlas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "112 - Al-Ikhlas.mp3"; sourceTree = "<group>"; };
-		3DC710FD207D424D000FD245 /* 114 - An-Nas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "114 - An-Nas.mp3"; sourceTree = "<group>"; };
+		3DC710F9207D4230000FD245 /* Al-Falaq.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Al-Falaq.mp3"; sourceTree = "<group>"; };
+		3DC710FA207D4230000FD245 /* Al-Ikhlas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Al-Ikhlas.mp3"; sourceTree = "<group>"; };
+		3DC710FD207D424D000FD245 /* An-Nas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "An-Nas.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,19 +67,51 @@
 			isa = PBXGroup;
 			children = (
 				3DC710D7207D08AD000FD245 /* AppDelegate.swift */,
-				3DC710DB207D08AD000FD245 /* Main.storyboard */,
-				3DC710F7207D33BF000FD245 /* PlayerViewController.swift */,
-				3DC710ED207D15E0000FD245 /* SoundCell.swift */,
-				3DC710EB207D134B000FD245 /* SoundListViewController.swift */,
-				3DC710EF207D16C6000FD245 /* Sound.swift */,
+				3DC71102207D6113000FD245 /* Controller */,
+				3DC71101207D610C000FD245 /* View */,
+				3DC71100207D6104000FD245 /* Model */,
 				3DC710DE207D08AD000FD245 /* Assets.xcassets */,
-				3DC710FA207D4230000FD245 /* 112 - Al-Ikhlas.mp3 */,
-				3DC710F9207D4230000FD245 /* 113 - Al-Falaq.mp3 */,
-				3DC710FD207D424D000FD245 /* 114 - An-Nas.mp3 */,
-				3DC710E0207D08AD000FD245 /* LaunchScreen.storyboard */,
+				3DC710FF207D608B000FD245 /* Sound Assets */,
 				3DC710E3207D08AD000FD245 /* Info.plist */,
 			);
 			path = "Sound Player";
+			sourceTree = "<group>";
+		};
+		3DC710FF207D608B000FD245 /* Sound Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3DC710F9207D4230000FD245 /* Al-Falaq.mp3 */,
+				3DC710FA207D4230000FD245 /* Al-Ikhlas.mp3 */,
+				3DC710FD207D424D000FD245 /* An-Nas.mp3 */,
+			);
+			path = "Sound Assets";
+			sourceTree = "<group>";
+		};
+		3DC71100207D6104000FD245 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DC710EF207D16C6000FD245 /* Sound.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DC71101207D610C000FD245 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DC710ED207D15E0000FD245 /* SoundCell.swift */,
+				3DC710E0207D08AD000FD245 /* LaunchScreen.storyboard */,
+				3DC710DB207D08AD000FD245 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DC71102207D6113000FD245 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3DC710EB207D134B000FD245 /* SoundListViewController.swift */,
+				3DC710F7207D33BF000FD245 /* PlayerViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +173,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC710FC207D4230000FD245 /* 112 - Al-Ikhlas.mp3 in Resources */,
+				3DC710FC207D4230000FD245 /* Al-Ikhlas.mp3 in Resources */,
 				3DC710E2207D08AD000FD245 /* LaunchScreen.storyboard in Resources */,
-				3DC710FB207D4230000FD245 /* 113 - Al-Falaq.mp3 in Resources */,
-				3DC710FE207D424D000FD245 /* 114 - An-Nas.mp3 in Resources */,
+				3DC710FB207D4230000FD245 /* Al-Falaq.mp3 in Resources */,
+				3DC710FE207D424D000FD245 /* An-Nas.mp3 in Resources */,
 				3DC710DF207D08AD000FD245 /* Assets.xcassets in Resources */,
 				3DC710DD207D08AD000FD245 /* Main.storyboard in Resources */,
 			);

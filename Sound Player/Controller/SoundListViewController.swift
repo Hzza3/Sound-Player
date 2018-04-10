@@ -22,9 +22,9 @@ class SoundListViewController: UIViewController {
     
     func createArray() -> [Sound] {
         var tempSounds : [Sound] = []
-        let sound1 = Sound(image: #imageLiteral(resourceName: "one"), title: "Al-Ikhlas", soundFileName: "112 - Al-Ikhlas")
-        let sound2 = Sound(image: #imageLiteral(resourceName: "two"), title: "Al-Falaq", soundFileName: "113 - Al-Falaq")
-        let sound3 = Sound(image: #imageLiteral(resourceName: "three"), title: "An-Nas", soundFileName: "114 - An-Nas")
+        let sound1 = Sound(image: #imageLiteral(resourceName: "one"), title: "Al-Ikhlas")
+        let sound2 = Sound(image: #imageLiteral(resourceName: "two"), title: "Al-Falaq")
+        let sound3 = Sound(image: #imageLiteral(resourceName: "three"), title: "An-Nas")
         
         tempSounds.append(sound1)
         tempSounds.append(sound2)
@@ -36,8 +36,8 @@ class SoundListViewController: UIViewController {
         if segue.identifier == "goToPlayer"
         {
           let destinationVC = segue.destination as! PlayerViewController
-            destinationVC.fileName = Sounds[fileIndex].soundFileName
             destinationVC.soundImage = Sounds[fileIndex].image
+            destinationVC.soundTitle = Sounds[fileIndex].title
         }
     }
     
